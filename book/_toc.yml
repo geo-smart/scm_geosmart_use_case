@@ -1,0 +1,44 @@
+# Table of content
+# Learn more at https://jupyterbook.org/customize/toc.html
+root: intro
+format: jb-book
+parts:
+- caption: About
+  chapters:
+    - title: Geosmart website
+      url: https://geo-smart.github.io/index.html
+
+- caption: Preparation
+  chapters:
+    - title: Project Pythia Foundations
+      url: https://foundations.projectpythia.org/landing-page.html
+
+- caption: Data Handling
+  chapters:
+    - file: data_handling/index
+      sections:
+        - file: data_handling/xarray
+
+- caption: Machine Learning Algorithms
+  chapters:
+    - file: algorithms/index
+    - file: algorithms/logistic_regression
+
+- caption: Neural Networks
+  chapters:
+    - file: neural_networks/index
+
+- caption: Model Evaluation
+  chapters:
+    - file: model_evaluation/index
+
+- caption: Workflow Management
+  chapters:
+    - file: workflow_management/index
+      sections:
+        - file: workflow_management/cloud
+
+- caption: Reference
+  chapters:
+    - file: reference/glossary
+    - file: reference/bibliography
