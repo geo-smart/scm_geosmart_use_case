@@ -23,6 +23,7 @@ parts:
   chapters:
     - file: algorithms/index
     - file: algorithms/logistic_regression
+    - file: SCA_mapping/chapter_snow_mapping_draft_v1
 
 - caption: Neural Networks
   chapters:
