@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Machine learning for snow cover mapping?</title>
+    <title>Machine learning for snow cover mapping</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -178,7 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Machine learning for snow cover mapping?
+   Machine learning for snow cover mapping
   </a>
  </li>
 </ul>
@@ -470,247 +470,112 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#kehan-yang-aji-john-nicoleta-cristea">
-   <em>
-    Kehan Yang
-   </em>
-   ,
-   <em>
-    Aji John
-   </em>
-   ,
-   <em>
-    Nicoleta Cristea
-   </em>
+  <a class="reference internal nav-link" href="#high-resolution-snow-covered-area-maps-are-needed-for-earth-science-research">
+   1. High-resolution snow-covered area maps are needed for Earth science research
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#outline">
-   Outline
+  <a class="reference internal nav-link" href="#machine-learning-tools">
+   2. Machine learning tools
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#high-resolution-snow-covered-area-maps-are-needed-for-earth-science-research">
-     1 High-resolution snow-covered area maps are needed for Earth science research
+    <a class="reference internal nav-link" href="#what-is-scikit-learn">
+     2.1 What is ‘scikit-learn’
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#machine-learning-tools">
-     2 Machine learning tools
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#what-is-scikit-learn">
-       2.1 What is ‘scikit-learn’
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#what-is-the-random-forest-algorithm">
-       2.2 What is the random forest algorithm
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#prepare-input-data">
-     3 Prepare Input data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#model-parameter-tuning">
-     4 Model parameter tuning
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#number-of-samples">
-       4.1. Number of samples
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#number-of-features">
-       4.2 Number of features
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#number-of-trees">
-       4.3 Number of trees
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#tree-depth">
-       4.4 Tree depth
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-to-train-random-forest-models">
-     5 How to train random forest models
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#split-data-into-training-and-testing-subsets">
-       5.1 Split data into training and testing subsets
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#define-the-random-forest-model">
-       5.2 Define the random forest model
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#feature-importance">
-       5.3 Feature importance
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#save-the-model">
-       5.4 Save the model
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#evaluation-of-model-performance">
-     6 Evaluation of model performance
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#testing-subset-model-performance">
-       6.1 Testing subset model performance
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#image-wide-model-performance">
-       6.2 Image wide model performance
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#model-performance-in-open-versus-forested-areas">
-       6.3 Model performance in open versus forested areas
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conclusion">
-     7. Conclusion
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reference">
-     Reference
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     1 High-resolution snow-covered area maps are needed for Earth science research
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     2. Machine learning tools
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       2.1 What is ‘scikit-learn’
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       2.2 What is the random forest algorithm
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     3 Prepare Input data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     4 Model parameter tuning
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id7">
-       4.1. Number of samples
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id8">
-       4.2 Number of features
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id9">
-       4.3 Number of trees
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id10">
-       4.4 Tree depth
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
-     5 How to train random forest models
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id12">
-       5.1 Split data into training and testing subsets
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id13">
-       5.2 Define the random forest model
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id14">
-       5.3 Feature importance
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id15">
-       5.4 Save the model
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id16">
-     6 Evaluation of model performance
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id17">
-       6.1 Testing subset model performance
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id18">
-       6.2 Image wide model performance
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id19">
-       6.3 Model performance in open versus forested areas
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id20">
-     7. Conclusion
+    <a class="reference internal nav-link" href="#what-is-the-random-forest-algorithm">
+     2.2 What is the random forest algorithm
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prepare-input-data">
+   3. Prepare Input data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-parameter-tuning">
+   4. Model parameter tuning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#number-of-samples">
+     4.1. Number of samples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#number-of-features">
+     4.2 Number of features
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#number-of-trees">
+     4.3 Number of trees
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tree-depth">
+     4.4 Tree depth
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-train-random-forest-models">
+   5. How to train random forest models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#split-data-into-training-and-testing-subsets">
+     5.1 Split data into training and testing subsets
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#define-the-random-forest-model">
+     5.2 Define the random forest model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#feature-importance">
+     5.3 Feature importance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#save-the-model">
+     5.4 Save the model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluation-of-model-performance">
+   6. Evaluation of model performance
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testing-subset-model-performance">
+     6.1 Testing subset model performance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#image-wide-model-performance">
+     6.2 Image wide model performance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-performance-in-open-versus-forested-areas">
+     6.3 Model performance in open versus forested areas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   7. Conclusion
+  </a>
  </li>
 </ul>
 
@@ -721,7 +586,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Machine learning for snow cover mapping?</h1>
+                <h1>Machine learning for snow cover mapping</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -732,247 +597,112 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#kehan-yang-aji-john-nicoleta-cristea">
-   <em>
-    Kehan Yang
-   </em>
-   ,
-   <em>
-    Aji John
-   </em>
-   ,
-   <em>
-    Nicoleta Cristea
-   </em>
+  <a class="reference internal nav-link" href="#high-resolution-snow-covered-area-maps-are-needed-for-earth-science-research">
+   1. High-resolution snow-covered area maps are needed for Earth science research
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#outline">
-   Outline
+  <a class="reference internal nav-link" href="#machine-learning-tools">
+   2. Machine learning tools
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#high-resolution-snow-covered-area-maps-are-needed-for-earth-science-research">
-     1 High-resolution snow-covered area maps are needed for Earth science research
+    <a class="reference internal nav-link" href="#what-is-scikit-learn">
+     2.1 What is ‘scikit-learn’
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#machine-learning-tools">
-     2 Machine learning tools
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#what-is-scikit-learn">
-       2.1 What is ‘scikit-learn’
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#what-is-the-random-forest-algorithm">
-       2.2 What is the random forest algorithm
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#prepare-input-data">
-     3 Prepare Input data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#model-parameter-tuning">
-     4 Model parameter tuning
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#number-of-samples">
-       4.1. Number of samples
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#number-of-features">
-       4.2 Number of features
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#number-of-trees">
-       4.3 Number of trees
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#tree-depth">
-       4.4 Tree depth
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-to-train-random-forest-models">
-     5 How to train random forest models
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#split-data-into-training-and-testing-subsets">
-       5.1 Split data into training and testing subsets
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#define-the-random-forest-model">
-       5.2 Define the random forest model
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#feature-importance">
-       5.3 Feature importance
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#save-the-model">
-       5.4 Save the model
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#evaluation-of-model-performance">
-     6 Evaluation of model performance
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#testing-subset-model-performance">
-       6.1 Testing subset model performance
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#image-wide-model-performance">
-       6.2 Image wide model performance
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#model-performance-in-open-versus-forested-areas">
-       6.3 Model performance in open versus forested areas
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conclusion">
-     7. Conclusion
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reference">
-     Reference
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     1 High-resolution snow-covered area maps are needed for Earth science research
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     2. Machine learning tools
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       2.1 What is ‘scikit-learn’
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       2.2 What is the random forest algorithm
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     3 Prepare Input data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     4 Model parameter tuning
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id7">
-       4.1. Number of samples
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id8">
-       4.2 Number of features
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id9">
-       4.3 Number of trees
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id10">
-       4.4 Tree depth
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
-     5 How to train random forest models
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id12">
-       5.1 Split data into training and testing subsets
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id13">
-       5.2 Define the random forest model
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id14">
-       5.3 Feature importance
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id15">
-       5.4 Save the model
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id16">
-     6 Evaluation of model performance
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id17">
-       6.1 Testing subset model performance
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id18">
-       6.2 Image wide model performance
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id19">
-       6.3 Model performance in open versus forested areas
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id20">
-     7. Conclusion
+    <a class="reference internal nav-link" href="#what-is-the-random-forest-algorithm">
+     2.2 What is the random forest algorithm
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prepare-input-data">
+   3. Prepare Input data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-parameter-tuning">
+   4. Model parameter tuning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#number-of-samples">
+     4.1. Number of samples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#number-of-features">
+     4.2 Number of features
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#number-of-trees">
+     4.3 Number of trees
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tree-depth">
+     4.4 Tree depth
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-train-random-forest-models">
+   5. How to train random forest models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#split-data-into-training-and-testing-subsets">
+     5.1 Split data into training and testing subsets
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#define-the-random-forest-model">
+     5.2 Define the random forest model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#feature-importance">
+     5.3 Feature importance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#save-the-model">
+     5.4 Save the model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluation-of-model-performance">
+   6. Evaluation of model performance
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testing-subset-model-performance">
+     6.1 Testing subset model performance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#image-wide-model-performance">
+     6.2 Image wide model performance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-performance-in-open-versus-forested-areas">
+     6.3 Model performance in open versus forested areas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   7. Conclusion
+  </a>
  </li>
 </ul>
 
@@ -985,77 +715,10 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="machine-learning-for-snow-cover-mapping">
-<h1>Machine learning for snow cover mapping?<a class="headerlink" href="#machine-learning-for-snow-cover-mapping" title="Permalink to this headline">#</a></h1>
-<section id="kehan-yang-aji-john-nicoleta-cristea">
-<h2><em>Kehan Yang</em>, <em>Aji John</em>, <em>Nicoleta Cristea</em><a class="headerlink" href="#kehan-yang-aji-john-nicoleta-cristea" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="outline">
-<h2>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">#</a></h2>
+<h1>Machine learning for snow cover mapping<a class="headerlink" href="#machine-learning-for-snow-cover-mapping" title="Permalink to this headline">#</a></h1>
+<p><em>Kehan Yang</em>, <em>Aji John</em>, <em>Nicoleta Cristea</em></p>
 <section id="high-resolution-snow-covered-area-maps-are-needed-for-earth-science-research">
-<h3>1 High-resolution snow-covered area maps are needed for Earth science research<a class="headerlink" href="#high-resolution-snow-covered-area-maps-are-needed-for-earth-science-research" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="machine-learning-tools">
-<h3>2 Machine learning tools<a class="headerlink" href="#machine-learning-tools" title="Permalink to this headline">#</a></h3>
-<section id="what-is-scikit-learn">
-<h4>2.1 What is ‘scikit-learn’<a class="headerlink" href="#what-is-scikit-learn" title="Permalink to this headline">#</a></h4>
-</section>
-<section id="what-is-the-random-forest-algorithm">
-<h4>2.2 What is the random forest algorithm<a class="headerlink" href="#what-is-the-random-forest-algorithm" title="Permalink to this headline">#</a></h4>
-</section>
-</section>
-<section id="prepare-input-data">
-<h3>3 Prepare Input data<a class="headerlink" href="#prepare-input-data" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="model-parameter-tuning">
-<h3>4 Model parameter tuning<a class="headerlink" href="#model-parameter-tuning" title="Permalink to this headline">#</a></h3>
-<section id="number-of-samples">
-<h4>4.1. Number of samples<a class="headerlink" href="#number-of-samples" title="Permalink to this headline">#</a></h4>
-</section>
-<section id="number-of-features">
-<h4>4.2 Number of features<a class="headerlink" href="#number-of-features" title="Permalink to this headline">#</a></h4>
-</section>
-<section id="number-of-trees">
-<h4>4.3 Number of trees<a class="headerlink" href="#number-of-trees" title="Permalink to this headline">#</a></h4>
-</section>
-<section id="tree-depth">
-<h4>4.4 Tree depth<a class="headerlink" href="#tree-depth" title="Permalink to this headline">#</a></h4>
-</section>
-</section>
-<section id="how-to-train-random-forest-models">
-<h3>5 How to train random forest models<a class="headerlink" href="#how-to-train-random-forest-models" title="Permalink to this headline">#</a></h3>
-<section id="split-data-into-training-and-testing-subsets">
-<h4>5.1 Split data into training and testing subsets<a class="headerlink" href="#split-data-into-training-and-testing-subsets" title="Permalink to this headline">#</a></h4>
-</section>
-<section id="define-the-random-forest-model">
-<h4>5.2 Define the random forest model<a class="headerlink" href="#define-the-random-forest-model" title="Permalink to this headline">#</a></h4>
-</section>
-<section id="feature-importance">
-<h4>5.3 Feature importance<a class="headerlink" href="#feature-importance" title="Permalink to this headline">#</a></h4>
-</section>
-<section id="save-the-model">
-<h4>5.4 Save the model<a class="headerlink" href="#save-the-model" title="Permalink to this headline">#</a></h4>
-</section>
-</section>
-<section id="evaluation-of-model-performance">
-<h3>6 Evaluation of model performance<a class="headerlink" href="#evaluation-of-model-performance" title="Permalink to this headline">#</a></h3>
-<section id="testing-subset-model-performance">
-<h4>6.1 Testing subset model performance<a class="headerlink" href="#testing-subset-model-performance" title="Permalink to this headline">#</a></h4>
-</section>
-<section id="image-wide-model-performance">
-<h4>6.2 Image wide model performance<a class="headerlink" href="#image-wide-model-performance" title="Permalink to this headline">#</a></h4>
-</section>
-<section id="model-performance-in-open-versus-forested-areas">
-<h4>6.3 Model performance in open versus forested areas<a class="headerlink" href="#model-performance-in-open-versus-forested-areas" title="Permalink to this headline">#</a></h4>
-</section>
-</section>
-<section id="conclusion">
-<h3>7. Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="reference">
-<h3>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="id1">
-<h3>1 High-resolution snow-covered area maps are needed for Earth science research<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h2>1. High-resolution snow-covered area maps are needed for Earth science research<a class="headerlink" href="#high-resolution-snow-covered-area-maps-are-needed-for-earth-science-research" title="Permalink to this headline">#</a></h2>
 <p>Snow is an important component in the Earth’s hydrological and energy cycles. Snowpack functions as a natural reservoir that stores water in cold months and slowly releases water into streams, rivers, and lakes, substantially mitigating water stress during the summer. Snow is one of the most reflective land cover types on the Earth’s surface and has positive feedback on climate warming. Temperature increases accelerate snowmelt rate and reduce snow-covered area, SCA, leading to a lower land surface reflectance. More solar radiation will be absorbed by the land surface, which in turn accelerates climate warming.  Snow-covered area (SCA) is a critical variable for studying land processes such as snow-albedo feedback at different spatial scales, impacts on plant phenology and other associated environmental processes, and is also used in land surface models. Therefore, to better understand water availability and the Earth’s energy balance, it is important to estimate the spatial and temporal distribution of the snowpack.</p>
 <p>While mapping SCA using optical satellite remote sensing imagery is very well established, its implications have been restricted by the tradeoff between spatial and temporal resolution over the past decades. Because mountain snowpack has very high spatial heterogeneity and the SCA can change dramatically in the melting season, it is necessary to have SCA observations at both high spatial and temporal resolution. In this context, the Planet small satellites provide new opportunities for SCA mapping. The Planet is a commercial company that launched about 200 satellites in orbit, aiming to provide whole coverage of the Earth daily at about 3-5-meter spatial resolution. All these small satellites can provide observations in visible (i.e., red, green, and blue), and near-infrared bands, where snow surface usually has a very high reflectance compared with other land cover types.</p>
 <p>The first generation of Planet satellites was launched in 2016, which is relatively new to users and its application in SCA mapping is rarely studied. Because Planet imagery does not have a shortwave infrared band, which is necessary to distinguish between snow and clouds, it is inapplicable to use the traditional approach (i.e., Normalized Difference Snow Index) to map SCA from Planet images. It becomes even more challenging that only four bands of information are provided which may not be enough to capture the main spectrum features of land cover types in remote sensing classification. In this context, we propose to use machine learning models to map SCA from Planet imagery. Specifically in this chapter, we will demonstrate how we prepare the model inputs, how we tune model parameters and select the best model, and how we evaluate model performance. The objectives of this chapter are to:</p>
@@ -1065,20 +728,20 @@ title="Print to PDF"
 <li><p>develop tutorial materials for educational purposes. All the scripts and datasets are released through the GitHub Repository.</p></li>
 </ol>
 </section>
-<section id="id2">
-<h3>2. Machine learning tools<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<section id="id3">
-<h4>2.1 What is ‘scikit-learn’<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
+<section id="machine-learning-tools">
+<h2>2. Machine learning tools<a class="headerlink" href="#machine-learning-tools" title="Permalink to this headline">#</a></h2>
+<section id="what-is-scikit-learn">
+<h3>2.1 What is ‘scikit-learn’<a class="headerlink" href="#what-is-scikit-learn" title="Permalink to this headline">#</a></h3>
 <p><a class="reference external" href="https://scikit-learn.org/stable/">Scikit-learn</a> is one of the most powerful and popular python packages designed to facilitate the use of machine learning. It provides various algorithms used for classification, regression, and clustering. In this section, we will be using the random forest algorithm in the scikit-learn package to map SCA.</p>
 </section>
-<section id="id4">
-<h4>2.2 What is the random forest algorithm<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
+<section id="what-is-the-random-forest-algorithm">
+<h3>2.2 What is the random forest algorithm<a class="headerlink" href="#what-is-the-random-forest-algorithm" title="Permalink to this headline">#</a></h3>
 <p>Random forest is a widely used machine learning algorithm developed by Leo Breiman and Adele Cutler (citation). It is an ensemble of multiple decision trees that are eventually aggregated to get the most likely result. A decision tree is a type of supervised machine learning that bases on a series of questions to categorize or make predictions. Each question forms a tree node that splits the data into different branches. If the answer to the question is ‘yes’, the decision follows the ‘yes’ branch; otherwise, the decision follows the alternate path until it reaches a result. The quality of the results is evaluated by metrics, such as the mean squared error (MSE), Gini Impurity, and information gain.</p>
 <p>While the decision trees algorithm is very easy to use, it can be prone to overfitting issues. Using an ensemble of decision trees can largely reduce the overfitting and prediction variance, providing more accurate results. Bagging, also known as bootstrap aggregation, is the most well-known ensemble learning technique, which trains multiple models independently with the training sample set randomly selected with replacement. The final prediction is determined by the average (for regression) or majority (for classification) of all the models. Random forest is an extension of the bagging approach, which generates a random subset of both samples and features for each model training. While a decision tree is based on all features to make decisions, the random forest algorithm only uses a subset of features, which can reduce the influence of highly correlated features in model prediction. More complex approaches based on image segmentation techniques exist for land cover classification, including snow (citation). For the purpose of this chapter, we chose to illustrate the use of the random forest algorithm for snow classification, as it is a robust and versatile method to address both classification and regression problems.</p>
 </section>
 </section>
-<section id="id5">
-<h3>3 Prepare Input data<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<section id="prepare-input-data">
+<h2>3. Prepare Input data<a class="headerlink" href="#prepare-input-data" title="Permalink to this headline">#</a></h2>
 <p>The satellite image used in this chapter is provided by the Planet company. Planet company has an <a class="reference external" href="https://www.planet.com/markets/education-and-research/">Education and Research Program</a> that provides limited, non-commercial access to PlanetScope imagery. The product used in this chapter is the Planet orthorectified product <code class="docutils literal notranslate"><span class="pre">PS2</span></code>, which includes four bands, blue (Band 1, 455-515 nm), green (Band 2, 500-590 nm), red (Band 3, 590-670 nm), and near-infrared (Band4, 780-860 nm). The spatial resolution of the image is 3.7 meters. As a first step, we visualize and inspect the Planet data. The following block of code reads the Planet image over a region in California and plots the results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1148,8 +811,8 @@ We extracted the surface reflectance of all bands of each pixel inside the ROIs 
 <li><p><code class="docutils literal notranslate"><span class="pre">label</span></code>: ‘0’ is no-snow land surface, ‘1’ is snow surface.</p></li>
 </ul>
 </section>
-<section id="id6">
-<h3>4 Model parameter tuning<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<section id="model-parameter-tuning">
+<h2>4. Model parameter tuning<a class="headerlink" href="#model-parameter-tuning" title="Permalink to this headline">#</a></h2>
 <p>Parameter selection is a very critical step in machine learning model fitting. In our experiment, we apply the random forest model to map Planet SCA, and there are several important parameters used in the model training process. To get an optimal set of these parameters as well as the sample size, we conducted a sensitivity test of the following four parameters on the overall model accuracy, including the number of samples, number of features, number of trees, and tree depth.
 Specifically, we will use the ‘RandomForestClassifier’ function from <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html?highlight=randomforestclassifier#sklearn.ensemble.RandomForestClassifier">sklearn.ensemble</a> to define the random forest model. The main parameters to customize the model include ‘n_estimators’, ‘max_depth’, and ‘max_features’.</p>
 <ul class="simple">
@@ -1175,8 +838,8 @@ Specifically, we will use the ‘RandomForestClassifier’ function from <a clas
 </div>
 </div>
 </div>
-<section id="id7">
-<h4>4.1. Number of samples<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
+<section id="number-of-samples">
+<h3>4.1. Number of samples<a class="headerlink" href="#number-of-samples" title="Permalink to this headline">#</a></h3>
 <p>Theoretically, the performance of random forest models can continually improve as the sample size increases. However, training a model with a large sample size would result in a high computational expense, and oftentimes, the model accuracy does not change significantly beyond a critical number of samples.</p>
 <p>We generated a custom function ‘get_model_size()’ to train random forest models with different sample size. We proportionately selected samples by changing ‘max_samples’ parameter. The “max_samples” argument can be set to a float between 0 and 1 to control the percentage of the training dataset to make the bootstrap sample used in each decision tree training. All custom functions are organized in the ‘functions_SCA_mapping.py’ and available to download in the GitHub repository for your interests.</p>
 <p>To reduce the calculation time, we only show the percentages ranging from 0.01 to 0.1 with a 0.01 interval, and the percentages ranging from 0.1 to 1.0 with a 0.1 interval in the experiment below. The result shows that the overall model accuracy improves with the increasing sample size when the percentage increases from 0.01 to 0.08 (i.e., 100 to 800 samples), followed by a very slight improvement with the percentage increases from 0.08 to 0.4 (i.e., 800 to 4 k samples). The model performance changes negligibaly after the sample size reaches 4000 (i.e., 0.4 percentage), meaning that the whole dataset can be very well represented by a subset with 4000 observations. Therefore, we will use 4000 as the optimal sample size to train the SCA model.</p>
@@ -1225,8 +888,8 @@ Specifically, we will use the ‘RandomForestClassifier’ function from <a clas
 </div>
 </div>
 </section>
-<section id="id8">
-<h4>4.2 Number of features<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
+<section id="number-of-features">
+<h3>4.2 Number of features<a class="headerlink" href="#number-of-features" title="Permalink to this headline">#</a></h3>
 <p>The number of features for each split node is perhaps the most important feature to configure in our random forest model, and it is set via the ‘max_features’ parameter. To explore the influence of feature numbers on model accuracy, we tested model accuracy with the ‘max_features’ ranging from 1 to 4. The result shows that the median accuracy (green triangle) of the experiments with max_features = 4 is slightly higher than the other three max_features values, though no significant difference is observed among all four test sets.
 The default of max_features is the square root of the number of input features. This would be sqrt(4) or two features for our test dataset. However, the total feature size we have is already very small and the model shows slightly better performance when max_features = 4. Also, we do not want to lose any information from these four bands. Therefore, we decided to use the max_features = 4 in the SCA model training.</p>
 <div class="cell docutils container">
@@ -1260,8 +923,8 @@ The default of max_features is the square root of the number of input features. 
 </div>
 </div>
 </section>
-<section id="id9">
-<h4>4.3 Number of trees<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h4>
+<section id="number-of-trees">
+<h3>4.3 Number of trees<a class="headerlink" href="#number-of-trees" title="Permalink to this headline">#</a></h3>
 <p>The number of trees is another key parameter to configure in a random forest model. The number of trees can be set via the “n_estimators’’ and the default value is 100. The example below explores the effect of the number of trees on model performance. We set the ‘n_estimators’ to the values between 1 to 1,000, with only a few selected tree numbers displayed in the boxplot. Typically, when we increase the number of trees, the model performance increases but it will stabilize when we have enough trees. In this case, the change in model performance is negligible when the number of trees reaches 10, and thus we will use n_estimators = 10 in our SCA model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1302,8 +965,8 @@ The default of max_features is the square root of the number of input features. 
 </div>
 </div>
 </section>
-<section id="id10">
-<h4>4.4 Tree depth<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
+<section id="tree-depth">
+<h3>4.4 Tree depth<a class="headerlink" href="#tree-depth" title="Permalink to this headline">#</a></h3>
 <p>The last parameter is the maximum depth of decision trees and can be set via ‘max_depth’. Ideally, we would like as many trees as possible to improve model performance, so the ‘max_depth’ is set to None by default, meaning no maximum depth. Reducing tree depth would make the ensemble converge a little earlier, but a large tree depth will lead to a longer computing time. We need a tree depth that is enough to split each node for our samples within an acceptable time. The example below explores the effect of maximum tree depth on model performance. The result shows that the model performance does not have a significant difference when the ‘max_depth’ is greater than 8 and stabilized when the tree depth is 10. So, we decided to set ‘max_depth’ to 10 in our SCA model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1354,11 +1017,11 @@ The default of max_features is the square root of the number of input features. 
 </div>
 </section>
 </section>
-<section id="id11">
-<h3>5 How to train random forest models<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<section id="how-to-train-random-forest-models">
+<h2>5. How to train random forest models<a class="headerlink" href="#how-to-train-random-forest-models" title="Permalink to this headline">#</a></h2>
 <p>With the tests conducted in the last section, we have the optimal values of the four main parameters that we will use in our SCA model. Our next step is to train the random forest model for SCA mapping.</p>
-<section id="id12">
-<h4>5.1 Split data into training and testing subsets<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h4>
+<section id="split-data-into-training-and-testing-subsets">
+<h3>5.1 Split data into training and testing subsets<a class="headerlink" href="#split-data-into-training-and-testing-subsets" title="Permalink to this headline">#</a></h3>
 <p>In this step, we split observations into a training subset and a testing subset. Usually, we want to use 70-80% of the data for training, and the remaining 70-80% of the data for testing. However, we find that the model accuracy is reaching a stable stage when the sample size reaches 4000 in the model parameter sensitivity analysis (Section 4.1). Therefore, we only use 4000 samples, with the remaining 96,000 samples used as an evaluation testing subset to improve model training efficiency.</p>
 <p>We use the ‘train_test_split’ function from the ‘sklearn.model_selection’ module to randomly split the sample dataset into training and test subsets.</p>
 <p>The parameter ‘test_size’ can be float or integer. If it is a float, the value should be between 0.0 and 1.0, representing the proportion of the dataset to include in the test split. If it is an integer, it represents the absolute number of the train samples.</p>
@@ -1389,8 +1052,8 @@ The default of max_features is the square root of the number of input features. 
 </div>
 </div>
 </section>
-<section id="id13">
-<h4>5.2 Define the random forest model<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h4>
+<section id="define-the-random-forest-model">
+<h3>5.2 Define the random forest model<a class="headerlink" href="#define-the-random-forest-model" title="Permalink to this headline">#</a></h3>
 <p>Now, as we have the training subset and the optimal parameters, we can run the ‘RandomForestClassifier()’ to train our model using the code below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1436,8 +1099,8 @@ The default of max_features is the square root of the number of input features. 
 </div>
 </div>
 </section>
-<section id="id14">
-<h4>5.3 Feature importance<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h4>
+<section id="feature-importance">
+<h3>5.3 Feature importance<a class="headerlink" href="#feature-importance" title="Permalink to this headline">#</a></h3>
 <p>It is important to explore each feature’s importance, especially when the feature size is very large, and many features are redundant. In our case, it is not necessary to reduce feature size as we only have four features, but we want to know which band provides the most significant information in the SCA mapping.</p>
 <p>We use <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.inspection.permutation_importance.html#sklearn.inspection.permutation_importance">‘permutation_importance’</a> form ‘sklearn.inspection’ to estimate feature importance. The function of the permutation feature importance is described as <a class="reference external" href="https://scikit-learn.org/stable/modules/permutation_importance.html#permutation-importance">below</a>:</p>
 <p><code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">permutation</span> <span class="pre">feature</span> <span class="pre">importance</span> <span class="pre">is</span> <span class="pre">defined</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">the</span> <span class="pre">decrease</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">model</span> <span class="pre">score</span> <span class="pre">when</span> <span class="pre">a</span> <span class="pre">single</span> <span class="pre">feature</span> <span class="pre">value</span> <span class="pre">is</span> <span class="pre">randomly</span> <span class="pre">shuffled.</span> <span class="pre">This</span> <span class="pre">procedure</span> <span class="pre">breaks</span> <span class="pre">the</span> <span class="pre">relationship</span> <span class="pre">between</span> <span class="pre">the</span> <span class="pre">feature</span> <span class="pre">and</span> <span class="pre">the</span> <span class="pre">target,</span> <span class="pre">thus</span> <span class="pre">the</span> <span class="pre">drop</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">model</span> <span class="pre">score</span> <span class="pre">is</span> <span class="pre">indicative</span> <span class="pre">of</span> <span class="pre">how</span> <span class="pre">much</span> <span class="pre">the</span> <span class="pre">model</span> <span class="pre">depends</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">feature.</span> <span class="pre">This</span> <span class="pre">technique</span> <span class="pre">benefits</span> <span class="pre">from</span> <span class="pre">being</span> <span class="pre">model</span> <span class="pre">agnostic</span> <span class="pre">and</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">calculated</span> <span class="pre">many</span> <span class="pre">times</span> <span class="pre">with</span> <span class="pre">different</span> <span class="pre">permutations</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">feature.</span></code></p>
@@ -1468,8 +1131,8 @@ The result shows that the blue band provides the most important information for 
 </div>
 </div>
 </section>
-<section id="id15">
-<h4>5.4 Save the model<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h4>
+<section id="save-the-model">
+<h3>5.4 Save the model<a class="headerlink" href="#save-the-model" title="Permalink to this headline">#</a></h3>
 <p>We now have our model trained and evaluated. We can save the model using the ‘dump()’ function from the ‘joblib’ package as shown below, so that next time when we want to apply this model, we do not have to run through the process mentioned ahead again. In the next section, we will discuss how we load this model and apply it to a satellite image.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1487,8 +1150,8 @@ The result shows that the blue band provides the most important information for 
 </div>
 </section>
 </section>
-<section id="id16">
-<h3>6 Evaluation of model performance<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+<section id="evaluation-of-model-performance">
+<h2>6. Evaluation of model performance<a class="headerlink" href="#evaluation-of-model-performance" title="Permalink to this headline">#</a></h2>
 <p>In the previous sections, we trained a model that can accurately predict SCA within the training samples and the overall model accuracy is 0.998 estimated through the k-fold cross-validation approach. However, we do not know how the model performs outside the training subset. To provide a more comprehensive model evaluation, and especially to test the model transferability, we provide the following two levels of assessment:</p>
 <ol class="simple">
 <li><p>As the model training only needs 4000 samples, we have 96,000 samples remaining for evaluation which are actually geographically located in the same region as the training samples. We can therefore assume that this testing subset has similar spectrum and physiographic features compared with the training subset, and thus the prediction is expected to be accurate.</p></li>
@@ -1535,8 +1198,8 @@ The result shows that the blue band provides the most important information for 
 <div class="math notranslate nohighlight">
 \[ Accuracy = (TP + TN)÷(TP + TN+ FP + FN) \]</div>
 <p>Where TP, TN, FP, FN are true positive, true negative, false positive, and false negative, respectively.</p>
-<section id="id17">
-<h4>6.1 Testing subset model performance<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h4>
+<section id="testing-subset-model-performance">
+<h3>6.1 Testing subset model performance<a class="headerlink" href="#testing-subset-model-performance" title="Permalink to this headline">#</a></h3>
 <p>We run the ‘model.predict()’ to get the snow cover prediction, where the ‘model’ is the SCA mapping model we trained in previous sections. We can use the code below to load the saved model from the directory:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1574,8 +1237,8 @@ All      54614  41386  96000
 </div>
 <p>From the results printed out above, the false negative is 11 within 54678 no-snow pixels, and the false positive is 22 within 41322 snow pixels. All five evaluation metrics are very close to 1, indicating the model performs very well in the remaining 96,000 testing samples, which is not very surprising as the pixels within the testing subset are located close to the training samples and also have similar spectrum features.</p>
 </section>
-<section id="id18">
-<h4>6.2 Image wide model performance<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h4>
+<section id="image-wide-model-performance">
+<h3>6.2 Image wide model performance<a class="headerlink" href="#image-wide-model-performance" title="Permalink to this headline">#</a></h3>
 <p>Now, let’s look at how the model performs across the entire image using the following steps. Firstly, we collect the four bands’ surface reflectance over the entire image, and then we apply a custom python function ‘run_sca_prediction()’ to predict SCA. Finally, we save the SCA image to ‘dir_our’ directory.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1671,8 +1334,8 @@ Save SCA map to:  ./data/SCA/20180528_181110_1025_3B_AnalyticMS_SR_clip_SCA.tif
 </div>
 <p>The result shows that, overall, 89% of the pixels are classified accurately with the f1 value of 0.87. The model has fewer false-positive predictions than false negative predictions as the precision value (0.89) is slightly higher than the recall value (0.85), indicating a small overall underestimation in SCA modeling.</p>
 </section>
-<section id="id19">
-<h4>6.3 Model performance in open versus forested areas<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h4>
+<section id="model-performance-in-open-versus-forested-areas">
+<h3>6.3 Model performance in open versus forested areas<a class="headerlink" href="#model-performance-in-open-versus-forested-areas" title="Permalink to this headline">#</a></h3>
 <p>To explore the potential reasons that explain the mismatch between ASO SCA and Planet SCA, we divide the entire domain into two categories: open areas and forested areas. We use a 3-meter canopy height model dataset provided by ASO. Inc to classify the domain into open and forested areas. If the pixel has a tree height value higher than 1 meter, then this pixel is classified as forest; otherwise, the pixel is classified as open.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1711,12 +1374,11 @@ Model performance in forested areas:
 <img alt="alt text" src="SCA_mapping/data/fig/SCA_result_display.jpeg" /></p>
 </section>
 </section>
-<section id="id20">
-<h3>7. Conclusion<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h3>
+<section id="conclusion">
+<h2>7. Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>In this chapter, we develop a random forest model to map snow-covered areas (SCA) from the high-resolution Planet imagery. We demonstrate the influence of four main parameters on model performance, including the number of samples, the number of features, the number of trees, and the tree depth. The optimal parameters determined by these tests are used in the SCA model generation.</p>
 <p>The final model shows very precise performance in predicting binary SCA with overall model accuracy of 1.00 and 0.94 at 3-meter spatial resolution when evaluated by the testing subset and the SCA derived from Airborne Snow Observatory (ASO) snow depth dataset, respectively. The model predicted Planet SCA exhibits much higher accuracy for open areas than forested  areas when evaluated by the ASO derived SCA, with an overall accuracy of 0.95 and 0.85, respectively. While the uncertainties in both SCA datasets are not negligible, the main mismatch between Planet SCA and the ASO SCA is caused by the difference in observation sensors. ASO SCA relies on a lidar sensor that can penetrate the canopy, while Planet uses optical sensors that only receive surface reflectance above the canopy.</p>
 <p>In summary, the SCA mapping model we demonstrated in this chapter is very feasible to set up and use. As we only used four bands of information in the model training, this method can be applied to most existing satellite observations like Landsat series imagery, Sentinel-2, and MODIS. The workflow generated in this chapter has critical implications for hydrological process monitoring and prediction, particularly in a world with more dramatic changes in snow cover.</p>
-</section>
 </section>
 </section>
 
@@ -1729,16 +1391,16 @@ Model performance in forested areas:
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "planet_project"
+            mode: "python"
         },
         kernelOptions: {
-            kernelName: "planet_project",
+            kernelName: "python3",
             path: "./SCA_mapping"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'planet_project'</script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

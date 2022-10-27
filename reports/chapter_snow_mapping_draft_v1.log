@@ -1,0 +1,63 @@
+Traceback (most recent call last):
+  File "/usr/share/miniconda3/envs/geosmart/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/usr/share/miniconda3/envs/geosmart/lib/python3.10/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/share/miniconda3/envs/geosmart/lib/python3.10/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/usr/share/miniconda3/envs/geosmart/lib/python3.10/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/share/miniconda3/envs/geosmart/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/usr/share/miniconda3/envs/geosmart/lib/python3.10/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/usr/share/miniconda3/envs/geosmart/lib/python3.10/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/share/miniconda3/envs/geosmart/lib/python3.10/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# import functions and packages
+from functions_book_chapter_SCA import *
+
+dir_raster = './data/planet/20180528_181110_1025_3B_AnalyticMS_SR_clip.tif'
+planet = rasterio.open(dir_raster).read()/10000
+planet = np.where(planet[0,:,:] == 0, np.nan, planet) # the default nan data value is 0, replace with np.nan
+
+fig, axs = plt.subplots(2,2,figsize=(15,7.5))
+im1 = axs[0,0].imshow(planet[0,:,:],cmap='jet')
+axs[0,0].set_title("Surface reflectance of blue band", fontsize=16)
+
+im2 = axs[0,1].imshow(planet[1,:,:], cmap='jet')
+axs[0,1].set_title("Surface reflectance of green band", fontsize=16)
+
+im3 = axs[1,0].imshow(planet[2,:,:], cmap='jet')
+axs[1,0].set_title("Surface reflectance of red band", fontsize=16)
+
+im4 = axs[1,1].imshow(planet[3,:,:], cmap='jet')
+axs[1,1].set_title("Surface reflectance of NIR band", fontsize=16)
+
+cbar_ax = fig.add_axes([0.95, 0.15, 0.02, 0.7])
+fig.colorbar(im1, cax=cbar_ax)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Input [0;32mIn [1][0m, in [0;36m<cell line: 2>[0;34m()[0m
+[1;32m      1[0m [38;5;66;03m# import functions and packages[39;00m
+[0;32m----> 2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mfunctions_book_chapter_SCA[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
+[1;32m      4[0m dir_raster [38;5;241m=[39m [38;5;124m'[39m[38;5;124m./data/planet/20180528_181110_1025_3B_AnalyticMS_SR_clip.tif[39m[38;5;124m'[39m
+[1;32m      5[0m planet [38;5;241m=[39m rasterio[38;5;241m.[39mopen(dir_raster)[38;5;241m.[39mread()[38;5;241m/[39m[38;5;241m10000[39m
+
+File [0;32m~/work/book/book/book/SCA_mapping/functions_book_chapter_SCA.py:5[0m, in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [38;5;124;03m'''[39;00m
+[1;32m      2[0m [38;5;124;03mThis script includes all packages and functions required by the book chapter[39;00m
+[1;32m      3[0m [38;5;124;03m'''[39;00m
+[1;32m      4[0m [38;5;66;03m# evaluate random forest algorithm for classification[39;00m
+[0;32m----> 5[0m [38;5;28;01mfrom[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mimport[39;00m arange
+[1;32m      6[0m [38;5;28;01mfrom[39;00m [38;5;21;01msklearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdatasets[39;00m [38;5;28;01mimport[39;00m make_classification
+[1;32m      7[0m [38;5;28;01mfrom[39;00m [38;5;21;01msklearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mmodel_selection[39;00m [38;5;28;01mimport[39;00m cross_val_score
+
+[0;31mModuleNotFoundError[0m: No module named 'numpy'
+ModuleNotFoundError: No module named 'numpy'
+
