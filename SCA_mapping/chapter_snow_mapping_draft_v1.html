@@ -470,8 +470,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#high-resolution-snow-covered-area-maps-are-needed-for-earth-science-research">
-   1. High-resolution snow-covered area maps are needed for Earth science research
+  <a class="reference internal nav-link" href="#motivation">
+   1. Motivation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -597,8 +597,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#high-resolution-snow-covered-area-maps-are-needed-for-earth-science-research">
-   1. High-resolution snow-covered area maps are needed for Earth science research
+  <a class="reference internal nav-link" href="#motivation">
+   1. Motivation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -717,8 +717,8 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="machine-learning-for-snow-cover-mapping">
 <h1>Machine learning for snow cover mapping<a class="headerlink" href="#machine-learning-for-snow-cover-mapping" title="Permalink to this headline">#</a></h1>
 <p><em>Kehan Yang</em>, <em>Aji John</em>, <em>Nicoleta Cristea</em></p>
-<section id="high-resolution-snow-covered-area-maps-are-needed-for-earth-science-research">
-<h2>1. High-resolution snow-covered area maps are needed for Earth science research<a class="headerlink" href="#high-resolution-snow-covered-area-maps-are-needed-for-earth-science-research" title="Permalink to this headline">#</a></h2>
+<section id="motivation">
+<h2>1. Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">#</a></h2>
 <p>Snow is an important component in the Earth’s hydrological and energy cycles. Snowpack functions as a natural reservoir that stores water in cold months and slowly releases water into streams, rivers, and lakes, substantially mitigating water stress during the summer. Snow is one of the most reflective land cover types on the Earth’s surface and has positive feedback on climate warming. Temperature increases accelerate snowmelt rate and reduce snow-covered area, SCA, leading to a lower land surface reflectance. More solar radiation will be absorbed by the land surface, which in turn accelerates climate warming.  Snow-covered area (SCA) is a critical variable for studying land processes such as snow-albedo feedback at different spatial scales, impacts on plant phenology and other associated environmental processes, and is also used in land surface models. Therefore, to better understand water availability and the Earth’s energy balance, it is important to estimate the spatial and temporal distribution of the snowpack.</p>
 <p>While mapping SCA using optical satellite remote sensing imagery is very well established, its implications have been restricted by the tradeoff between spatial and temporal resolution over the past decades. Because mountain snowpack has very high spatial heterogeneity and the SCA can change dramatically in the melting season, it is necessary to have SCA observations at both high spatial and temporal resolution. In this context, the Planet small satellites provide new opportunities for SCA mapping. The Planet is a commercial company that launched about 200 satellites in orbit, aiming to provide whole coverage of the Earth daily at about 3-5-meter spatial resolution. All these small satellites can provide observations in visible (i.e., red, green, and blue), and near-infrared bands, where snow surface usually has a very high reflectance compared with other land cover types.</p>
 <p>The first generation of Planet satellites was launched in 2016, which is relatively new to users and its application in SCA mapping is rarely studied. Because Planet imagery does not have a shortwave infrared band, which is necessary to distinguish between snow and clouds, it is inapplicable to use the traditional approach (i.e., Normalized Difference Snow Index) to map SCA from Planet images. It becomes even more challenging that only four bands of information are provided which may not be enough to capture the main spectrum features of land cover types in remote sensing classification. In this context, we propose to use machine learning models to map SCA from Planet imagery. Specifically in this chapter, we will demonstrate how we prepare the model inputs, how we tune model parameters and select the best model, and how we evaluate model performance. The objectives of this chapter are to:</p>
