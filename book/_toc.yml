@@ -15,6 +15,7 @@ parts:
 
 - caption: Data Handling
   chapters:
+    - file: interactive
     - file: data_handling/index
       sections:
         - file: data_handling/xarray
