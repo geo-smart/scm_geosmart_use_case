@@ -1,0 +1,46 @@
+Traceback (most recent call last):
+  File "/usr/share/miniconda3/envs/geosmart/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/usr/share/miniconda3/envs/geosmart/lib/python3.10/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/share/miniconda3/envs/geosmart/lib/python3.10/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/usr/share/miniconda3/envs/geosmart/lib/python3.10/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/share/miniconda3/envs/geosmart/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/usr/share/miniconda3/envs/geosmart/lib/python3.10/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/usr/share/miniconda3/envs/geosmart/lib/python3.10/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/share/miniconda3/envs/geosmart/lib/python3.10/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+dir_aso = './data/ASO/ASO_3M_SD_USCATE_20180528_clip.tif'
+raso = rasterio.open(dir_aso,'r').read()
+raso = np.where(raso[0,:,:] < 0, np.nan, raso)
+
+th = 0.1 # using 10 cm threshold
+raso_binary = np.where(raso >= 0.1, 1, 0) # if the SD is higher than 10 cm, then snow; otherwise, no-snow
+
+fig, axs = plt.subplots(1,2,figsize=(16,6))
+im1 = axs[0].imshow(raso[0,:,:],cmap = 'Blues',vmin = 0, vmax = 5)
+axs[0].set_title('ASO snow depth', fontsize=16)
+fig.colorbar(im1, ax = axs[0], label = 'snow depth (meter)', extend = 'max')
+
+im2 = axs[1].imshow(raso_binary[0,:,:], cmap = 'gray', interpolation = 'none')
+axs[1].set_title('ASO snow cover (TH = 10 cm)', fontsize=16)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Input [0;32mIn [1][0m, in [0;36m<cell line: 2>[0;34m()[0m
+[1;32m      1[0m dir_aso [38;5;241m=[39m [38;5;124m'[39m[38;5;124m./data/ASO/ASO_3M_SD_USCATE_20180528_clip.tif[39m[38;5;124m'[39m
+[0;32m----> 2[0m raso [38;5;241m=[39m [43mrasterio[49m[38;5;241m.[39mopen(dir_aso,[38;5;124m'[39m[38;5;124mr[39m[38;5;124m'[39m)[38;5;241m.[39mread()
+[1;32m      3[0m raso [38;5;241m=[39m np[38;5;241m.[39mwhere(raso[[38;5;241m0[39m,:,:] [38;5;241m<[39m [38;5;241m0[39m, np[38;5;241m.[39mnan, raso)
+[1;32m      5[0m th [38;5;241m=[39m [38;5;241m0.1[39m [38;5;66;03m# using 10 cm threshold[39;00m
+
+[0;31mNameError[0m: name 'rasterio' is not defined
+NameError: name 'rasterio' is not defined
+

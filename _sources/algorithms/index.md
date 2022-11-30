@@ -1,3 +1,0 @@
-# Introduction
-
-Content in development!
