@@ -9,7 +9,6 @@ only_build_toc_files: true
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
-  announcement: "⚠️This website is currently under construction⚠️"
   use_edit_page_button: true
   use_issues_button: true
   use_repository_button: true
@@ -20,7 +19,7 @@ parse:
   # https://jupyterbook.org/content/content-blocks.html?highlight=myst%20substitution#define-substitutions-for-your-whole-book
   # https://jupyterbook.org/content/content-blocks.html#using-substitutions-in-links
   myst_substitutions:
-    website_url: "https://geo-smart.github.io/book"
+    website_url: "https://geo-smart.github.io/scm_geosmart_use_case"
   myst_enable_extensions:
     # Defaults
     - dollarmath

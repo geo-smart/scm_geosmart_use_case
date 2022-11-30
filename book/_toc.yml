@@ -7,41 +7,36 @@ parts:
   chapters:
     - title: Geosmart website
       url: https://geo-smart.github.io/index.html
-
-- caption: Preparation
-  chapters:
     - title: Project Pythia Foundations
       url: https://foundations.projectpythia.org/landing-page.html
 
-- caption: Data Handling
+- caption: Chapter One
   chapters:
-    - file: interactive
-    - file: data_handling/index
-      sections:
-        - file: data_handling/xarray
+    - file: chapters/one
 
-- caption: Machine Learning Algorithms
+- caption: Chapter Two
   chapters:
-    - file: algorithms/index
-    - file: algorithms/logistic_regression
+    - file: chapters/two
 
-- caption: SCA Mapping
+- caption: Chapter Three
   chapters:
-    - file: SCA_mapping/chapter_snow_mapping_draft_v1
+    - file: chapters/three
 
-- caption: Neural Networks
+- caption: Chapter Four
   chapters:
-    - file: neural_networks/index
+    - file: chapters/four
 
-- caption: Model Evaluation
+- caption: Chapter Five
   chapters:
-    - file: model_evaluation/index
+    - file: chapters/five
 
-- caption: Workflow Management
+- caption: Chapter Six
   chapters:
-    - file: workflow_management/index
-      sections:
-        - file: workflow_management/cloud
+    - file: chapters/six
+
+- caption: Chapter Seven
+  chapters:
+    - file: chapters/seven
 
 - caption: Reference
   chapters:
