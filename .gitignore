@@ -1,5 +1,8 @@
 .DS_Store
 
+# Big data files
+book/chapters/data/planet
+
 # Jupyter Book things
 .bash_history
 *_build
