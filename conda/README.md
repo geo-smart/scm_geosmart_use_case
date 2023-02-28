@@ -2,6 +2,12 @@
 
 **The only file you should need to edit in this folder is `conda/environment.yml`. This file defines the set of conda-packages needed to render the full website.**
 
+```
+conda env create --name scm_geosmart --file=environment.yml
+conda activate scm_geosmart
+conda env update --file environment.yml --prune
+```
+
 Although we refer to "conda" environments, we recommend using [mamba](https://github.com/mamba-org/mamba) as a drop in replacement for the `conda` package manager. Mamba performs operations in parallel, which we've found to be important for creating complex hackweek environments involving many packages!
 
 Lockfiles ensure that everyone working on this project has an identical development environment, whether working on a personal computer or running on our hosted JupyterHub cloud infrastructure.
