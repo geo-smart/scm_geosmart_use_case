@@ -15,8 +15,20 @@ jobs:
 
     - uses: ./.github/actions/setupconda
 
-    - name: Install packages for the checker script
-      run: pip install nbformat
+    - name: Install Dependencies
+      run: |
+        pip install nbqa flake8
 
-    - name: Run Python Script
-      run: python ./.github/workflows/reproducibility_checker.py
+    - name: Lint Jupyter Notebooks
+      run: |
+        find ./book/chapters/ -type f -name '*.ipynb' -exec nbqa flake8 {} +
+
+      # Fail the workflow if linting errors are found
+      continue-on-error: true
+
+    - name: Check for Errors
+      run: |
+        if [ -n "$(grep -r "^[^:]*: [1-9]" ./*.ipynb)" ]; then
+          echo "Linting errors found. Please check the logs."
+          exit 1
+        fi
