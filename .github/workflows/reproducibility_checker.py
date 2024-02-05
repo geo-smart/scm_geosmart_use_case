@@ -61,7 +61,7 @@ def check_reproducibility_of_all_notebooks_in_a_folder(folder_path: str):
     # Output missing functions, if any
     if result:
         error_msg = ""
-        for file_path, missing_functions in result:
+        for file_path, missing_functions in result.items():
             error_msg += f"File: {file_path}\nMissing Functions: {', '.join(missing_functions)}\n"
         raise ValueError(error_msg)
     else:
