@@ -1,5 +1,6 @@
 import ast
 import importlib
+import nbformat
 import os
 
 def extract_functions_from_notebook(notebook_path):
