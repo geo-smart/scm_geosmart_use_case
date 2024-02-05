@@ -16,7 +16,7 @@ jobs:
     - uses: ./.github/actions/setupconda
 
     - name: Install packages for the checker script
-      run: conda install nbformat
+      run: pip install nbformat
 
     - name: Run Python Script
       run: python ./.github/workflows/reproducibility_checker.py
