@@ -1,5 +1,6 @@
 import ast
 import importlib
+import os
 
 def extract_functions(node):
     if isinstance(node, ast.FunctionDef):

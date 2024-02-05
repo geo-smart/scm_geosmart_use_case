@@ -6,7 +6,7 @@ on:
       - '*'
 
 jobs:
-  build:
+  check-reproducibility-of-all-notebooks:
     runs-on: ubuntu-latest
 
     steps:
