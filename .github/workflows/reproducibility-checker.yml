@@ -21,8 +21,7 @@ jobs:
 
     - name: Lint Jupyter Notebooks
       run: |
-        find ./book/chapters/ -type f -name '*.ipynb' -exec nbqa flake8 
-        --select=F821 {} \; > lint_logs.txt
+        find ./book/chapters/ -type f -name '*.ipynb' -exec nbqa flake8 --select=F821 {} + > lint_logs.txt
 
       # Fail the workflow if linting errors are found
       continue-on-error: true
