@@ -20,8 +20,10 @@ def collect_missing_functions(file_path):
 
     notebook_ast = ast.parse(notebook_content)
     functions_used = extract_functions(notebook_ast)
+    print(f"functions_used = {functions_used}")
 
     missing_functions = [func for func in functions_used if not check_function_existence(func)]
+    print(f"missing_functions = {missing_functions}")
     return missing_functions
 
 def traverse_notebooks(folder_path):
@@ -31,6 +33,7 @@ def traverse_notebooks(folder_path):
         for file in files:
             if file.endswith('.ipynb'):
                 file_path = os.path.join(root, file)
+                print(f"Examining {file_path}")
                 missing_functions = collect_missing_functions(file_path)
                 if missing_functions:
                     missing_functions_all.append((file_path, missing_functions))
@@ -39,6 +42,7 @@ def traverse_notebooks(folder_path):
 
 
 def check_reproducibility_of_all_notebooks_in_a_folder(folder_path: str):
+    print(f"Checking the home directory: {folder_path}")
     # Specify the folder path to traverse
     folder_path = folder_path
 
