@@ -2,43 +2,51 @@ import ast
 import importlib
 import os
 
-def extract_functions(node):
-    if isinstance(node, ast.FunctionDef):
-        return [node.name]
-    return [f for child in ast.iter_child_nodes(node) for f in extract_functions(child)]
+def extract_functions_from_notebook(notebook_path):
+    with open(notebook_path, 'r', encoding='utf-8') as notebook_file:
+        notebook_content = nbformat.read(notebook_file, as_version=4)
 
-def check_function_existence(function_name):
+    functions_called = set()
+
+    for cell in notebook_content['cells']:
+        if cell['cell_type'] == 'code':
+            code_lines = cell['source'].split('\n')
+            for line in code_lines:
+                if line.strip().startswith(('def ', 'async def ')):
+                    # Extracting function name from definition
+                    function_name = line.split('(')[0].split(' ')[-1].strip()
+                    functions_called.add(function_name)
+                elif '(' in line and line.strip().endswith(')'):
+                    # Extracting function name from function call
+                    function_name = line.split('(')[0].strip()
+                    functions_called.add(function_name)
+
+    return functions_called
+
+def check_functions_existence(functions, conda_env):
+    missing_functions = [func for func in functions if not check_function_existence(func, conda_env)]
+    return missing_functions
+
+def check_function_existence(function_name, conda_env):
     try:
-        importlib.import_module('__main__').__dict__[function_name]
+        importlib.import_module(conda_env).__dict__[function_name]
         return True
     except (ImportError, KeyError):
         return False
 
-def collect_missing_functions(file_path):
-    with open(file_path, 'r', encoding='utf-8') as notebook_file:
-        notebook_content = notebook_file.read()
-
-    notebook_ast = ast.parse(notebook_content)
-    functions_used = extract_functions(notebook_ast)
-    print(f"functions_used = {functions_used}")
-
-    missing_functions = [func for func in functions_used if not check_function_existence(func)]
-    print(f"missing_functions = {missing_functions}")
-    return missing_functions
-
-def traverse_notebooks(folder_path):
-    missing_functions_all = []
+def traverse_notebooks(folder_path, conda_env):
+    functions_called_all = {}
 
     for root, dirs, files in os.walk(folder_path):
         for file in files:
             if file.endswith('.ipynb'):
                 file_path = os.path.join(root, file)
-                print(f"Examining {file_path}")
-                missing_functions = collect_missing_functions(file_path)
+                functions_called = extract_functions_from_notebook(file_path)
+                missing_functions = check_functions_existence(functions_called, conda_env)
                 if missing_functions:
-                    missing_functions_all.append((file_path, missing_functions))
+                    functions_called_all[file_path] = missing_functions
 
-    return missing_functions_all
+    return functions_called_all
 
 
 def check_reproducibility_of_all_notebooks_in_a_folder(folder_path: str):
@@ -47,7 +55,7 @@ def check_reproducibility_of_all_notebooks_in_a_folder(folder_path: str):
     folder_path = folder_path
 
     # Traverse notebooks and collect missing functions
-    result = traverse_notebooks(folder_path)
+    result = traverse_notebooks(folder_path, "geosmart")
 
     # Output missing functions, if any
     if result:
