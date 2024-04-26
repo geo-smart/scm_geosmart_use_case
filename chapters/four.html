@@ -526,6 +526,8 @@ Specifically, we will use the ‘RandomForestClassifier’ function from <a clas
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># prepare data </span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/samples/sample_10K.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sample dimentions:&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(),</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -547,7 +549,9 @@ Specifically, we will use the ‘RandomForestClassifier’ function from <a clas
 <p>To reduce the calculation time, we only show the percentages ranging from 0.01 to 0.1 with a 0.01 interval, and the percentages ranging from 0.1 to 1.0 with a 0.1 interval in the experiment below. The result shows that the overall model accuracy improves with the increasing sample size when the percentage increases from 0.01 to 0.08 (i.e., 100 to 800 samples), followed by a very slight improvement with the percentage increases from 0.08 to 0.4 (i.e., 800 to 4 k samples). The model performance changes negligibaly after the sample size reaches 4000 (i.e., 0.4 percentage), meaning that the whole dataset can be very well represented by a subset with 4000 observations. Therefore, we will use 4000 as the optimal sample size to train the SCA model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># customize models with different sample sizes</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functions_book_chapter_SCA</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># customize models with different sample sizes</span>
 <span class="n">models</span> <span class="o">=</span> <span class="n">get_models_size</span><span class="p">()</span>
 <span class="n">results</span><span class="p">,</span> <span class="n">names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(),</span> <span class="nb">list</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">models</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -566,24 +570,24 @@ Specifically, we will use the ‘RandomForestClassifier’ function from <a clas
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;Sample size: 100 Mean Score: 0.9971 (Score SD: 0.0016)
-&gt;Sample size: 200 Mean Score: 0.9976 (Score SD: 0.0015)
-&gt;Sample size: 300 Mean Score: 0.9978 (Score SD: 0.0014)
-&gt;Sample size: 400 Mean Score: 0.9979 (Score SD: 0.0014)
-&gt;Sample size: 500 Mean Score: 0.9980 (Score SD: 0.0014)
-&gt;Sample size: 600 Mean Score: 0.9982 (Score SD: 0.0013)
-&gt;Sample size: 700 Mean Score: 0.9983 (Score SD: 0.0013)
-&gt;Sample size: 800 Mean Score: 0.9984 (Score SD: 0.0012)
-&gt;Sample size: 900 Mean Score: 0.9985 (Score SD: 0.0012)
-&gt;Sample size: 1000 Mean Score: 0.9985 (Score SD: 0.0012)
-&gt;Sample size: 2000 Mean Score: 0.9985 (Score SD: 0.0012)
-&gt;Sample size: 3000 Mean Score: 0.9986 (Score SD: 0.0011)
-&gt;Sample size: 4000 Mean Score: 0.9987 (Score SD: 0.0011)
-&gt;Sample size: 5000 Mean Score: 0.9987 (Score SD: 0.0011)
-&gt;Sample size: 6000 Mean Score: 0.9987 (Score SD: 0.0011)
-&gt;Sample size: 7000 Mean Score: 0.9987 (Score SD: 0.0011)
-&gt;Sample size: 8000 Mean Score: 0.9987 (Score SD: 0.0011)
-&gt;Sample size: 9000 Mean Score: 0.9987 (Score SD: 0.0011)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;Sample size: 100   Mean Score: 0.997141 (Score SD: 0.001645)
+&gt;Sample size: 200   Mean Score: 0.997604 (Score SD: 0.001463)
+&gt;Sample size: 300   Mean Score: 0.997760 (Score SD: 0.001426)
+&gt;Sample size: 400   Mean Score: 0.997912 (Score SD: 0.001367)
+&gt;Sample size: 500   Mean Score: 0.998080 (Score SD: 0.001354)
+&gt;Sample size: 600   Mean Score: 0.998214 (Score SD: 0.001289)
+&gt;Sample size: 700   Mean Score: 0.998319 (Score SD: 0.001272)
+&gt;Sample size: 800   Mean Score: 0.998419 (Score SD: 0.001240)
+&gt;Sample size: 900   Mean Score: 0.998453 (Score SD: 0.001197)
+&gt;Sample size: 1000   Mean Score: 0.998486 (Score SD: 0.001178)
+&gt;Sample size: 2000   Mean Score: 0.998532 (Score SD: 0.001167)
+&gt;Sample size: 3000   Mean Score: 0.998618 (Score SD: 0.001154)
+&gt;Sample size: 4000   Mean Score: 0.998701 (Score SD: 0.001126)
+&gt;Sample size: 5000   Mean Score: 0.998731 (Score SD: 0.001118)
+&gt;Sample size: 6000   Mean Score: 0.998719 (Score SD: 0.001135)
+&gt;Sample size: 7000   Mean Score: 0.998716 (Score SD: 0.001123)
+&gt;Sample size: 8000   Mean Score: 0.998735 (Score SD: 0.001118)
+&gt;Sample size: 9000   Mean Score: 0.998743 (Score SD: 0.001123)
 </pre></div>
 </div>
 <img alt="../_images/four_5_1.png" src="../_images/four_5_1.png" />
@@ -615,10 +619,10 @@ The default of max_features is the square root of the number of input features. 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;Features: 1   Mean Score: 0.998757 (Score SD: 0.001093)
-&gt;Features: 2   Mean Score: 0.998760 (Score SD: 0.001105)
-&gt;Features: 3   Mean Score: 0.998799 (Score SD: 0.001109)
-&gt;Features: 4   Mean Score: 0.998831 (Score SD: 0.001115)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;Features: 1   Mean Score: 0.998769 (Score SD: 0.001105)
+&gt;Features: 2   Mean Score: 0.998754 (Score SD: 0.001119)
+&gt;Features: 3   Mean Score: 0.998793 (Score SD: 0.001102)
+&gt;Features: 4   Mean Score: 0.998832 (Score SD: 0.001110)
 </pre></div>
 </div>
 <img alt="../_images/four_7_1.png" src="../_images/four_7_1.png" />
@@ -649,21 +653,19 @@ The default of max_features is the square root of the number of input features. 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;Tree numbers: 1   Mean Score: 0.998253 (Score SD: 0.001321)
-&gt;Tree numbers: 2   Mean Score: 0.998478 (Score SD: 0.001219)
-&gt;Tree numbers: 3   Mean Score: 0.998656 (Score SD: 0.001147)
-&gt;Tree numbers: 4   Mean Score: 0.998602 (Score SD: 0.001150)
-&gt;Tree numbers: 5   Mean Score: 0.998685 (Score SD: 0.001157)
-&gt;Tree numbers: 10   Mean Score: 0.998702 (Score SD: 0.001104)
-&gt;Tree numbers: 20   Mean Score: 0.998741 (Score SD: 0.001130)
-&gt;Tree numbers: 50   Mean Score: 0.998726 (Score SD: 0.001134)
-&gt;Tree numbers: 100   Mean Score: 0.998756 (Score SD: 0.001116)
-&gt;Tree numbers: 200   Mean Score: 0.998770 (Score SD: 0.001110)
-&gt;Tree numbers: 800   Mean Score: 0.998775 (Score SD: 0.001108)
-&gt;Tree numbers: 1000   Mean Score: 0.998770 (Score SD: 0.001109)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;Tree numbers: 1   Mean Score: 0.998265 (Score SD: 0.001342)
+&gt;Tree numbers: 2   Mean Score: 0.998451 (Score SD: 0.001211)
+&gt;Tree numbers: 3   Mean Score: 0.998651 (Score SD: 0.001152)
+&gt;Tree numbers: 4   Mean Score: 0.998606 (Score SD: 0.001137)
+&gt;Tree numbers: 5   Mean Score: 0.998674 (Score SD: 0.001142)
+&gt;Tree numbers: 10   Mean Score: 0.998699 (Score SD: 0.001116)
+&gt;Tree numbers: 20   Mean Score: 0.998723 (Score SD: 0.001122)
+&gt;Tree numbers: 50   Mean Score: 0.998756 (Score SD: 0.001101)
+&gt;Tree numbers: 100   Mean Score: 0.998759 (Score SD: 0.001101)
+&gt;Tree numbers: 200   Mean Score: 0.998764 (Score SD: 0.001110)
+&gt;Tree numbers: 800   Mean Score: 0.998768 (Score SD: 0.001115)
 </pre></div>
 </div>
-<img alt="../_images/four_9_1.png" src="../_images/four_9_1.png" />
 </div>
 </div>
 </section>

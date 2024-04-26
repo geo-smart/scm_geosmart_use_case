@@ -18,6 +18,9 @@ Traceback (most recent call last):
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 # read model input features and labels 
+import pandas as pd
+from sklearn.model_selection import train_test_split
+
 data = pd.read_csv('./data/samples/sample_100K.csv', index_col = False)
 print("Sample dimentions:".format(), data.shape)
 print(data.head())
@@ -28,13 +31,13 @@ X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.96,random_state
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
 Input [0;32mIn [1][0m, in [0;36m<cell line: 2>[0;34m()[0m
 [1;32m      1[0m [38;5;66;03m# read model input features and labels [39;00m
-[0;32m----> 2[0m data [38;5;241m=[39m [43mpd[49m[38;5;241m.[39mread_csv([38;5;124m'[39m[38;5;124m./data/samples/sample_100K.csv[39m[38;5;124m'[39m, index_col [38;5;241m=[39m [38;5;28;01mFalse[39;00m)
-[1;32m      3[0m [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mSample dimentions:[39m[38;5;124m"[39m[38;5;241m.[39mformat(), data[38;5;241m.[39mshape)
-[1;32m      4[0m [38;5;28mprint[39m(data[38;5;241m.[39mhead())
+[0;32m----> 2[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
+[1;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01msklearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mmodel_selection[39;00m [38;5;28;01mimport[39;00m train_test_split
+[1;32m      5[0m data [38;5;241m=[39m pd[38;5;241m.[39mread_csv([38;5;124m'[39m[38;5;124m./data/samples/sample_100K.csv[39m[38;5;124m'[39m, index_col [38;5;241m=[39m [38;5;28;01mFalse[39;00m)
 
-[0;31mNameError[0m: name 'pd' is not defined
-NameError: name 'pd' is not defined
+[0;31mModuleNotFoundError[0m: No module named 'pandas'
+ModuleNotFoundError: No module named 'pandas'
 

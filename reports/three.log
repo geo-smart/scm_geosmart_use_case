@@ -19,6 +19,7 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 ------------------
 # import functions and packages
 from functions_book_chapter_SCA import *
+import rasterio
 
 dir_raster = './data/planet/20180528_181110_1025_3B_AnalyticMS_SR_clip.tif'
 planet = rasterio.open(dir_raster).read()/10000
@@ -46,8 +47,8 @@ fig.colorbar(im1, cax=cbar_ax)
 Input [0;32mIn [1][0m, in [0;36m<cell line: 2>[0;34m()[0m
 [1;32m      1[0m [38;5;66;03m# import functions and packages[39;00m
 [0;32m----> 2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mfunctions_book_chapter_SCA[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
-[1;32m      4[0m dir_raster [38;5;241m=[39m [38;5;124m'[39m[38;5;124m./data/planet/20180528_181110_1025_3B_AnalyticMS_SR_clip.tif[39m[38;5;124m'[39m
-[1;32m      5[0m planet [38;5;241m=[39m rasterio[38;5;241m.[39mopen(dir_raster)[38;5;241m.[39mread()[38;5;241m/[39m[38;5;241m10000[39m
+[1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mrasterio[39;00m
+[1;32m      5[0m dir_raster [38;5;241m=[39m [38;5;124m'[39m[38;5;124m./data/planet/20180528_181110_1025_3B_AnalyticMS_SR_clip.tif[39m[38;5;124m'[39m
 
 File [0;32m~/work/scm_geosmart_use_case/scm_geosmart_use_case/book/chapters/functions_book_chapter_SCA.py:5[0m, in [0;36m<module>[0;34m[0m
 [1;32m      1[0m [38;5;124;03m'''[39;00m
