@@ -13,6 +13,7 @@ dependencies:
   - matplotlib
   - rasterio
   - fiona
+  - huggingface_hub
 platforms:
   - linux-64
   - osx-64
